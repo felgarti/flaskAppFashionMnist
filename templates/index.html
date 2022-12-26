@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>deploy with flask</title>
+</head>
+<body>
+<form  action="/predict" method="post" enctype="multipart/form-data">
+<div class="input-group mb-3 mt-3">
+  <label class="input-group-text " for="img">Upload</label>
+  <input type="file" class="form-control" id="img" name="img">
+
+</div>
+     <button type="submit" class="btn btn-success" >valider</button>
+</form>
+
+{% if imagePath!=None   %}
+
+   <img src="{{url_for('predict', filename=imagePath)}}" alt="" >
+<img src="/images/botin-tacon-piel-cremallera.jpg" alt="" >
+<h1>I think : {{text}}
+
+</h1>
+
+{% endif %}
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
